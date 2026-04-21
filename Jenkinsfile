@@ -1,9 +1,13 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven3'
+        jdk 'JDK17'
+    }
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/sattiarati-creator/maven.git'
+                git branch: 'main', url: 'https://github.com/ananyasanu622-dot/Maven_pro.git'
             }
         }
         stage('Build') {
